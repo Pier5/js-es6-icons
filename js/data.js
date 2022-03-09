@@ -25,98 +25,98 @@ const arrIcons = [
 	},
 	{
 		name: 'dog',
-		prefix: 'fa-',
+		prefix: 'fas fa-dog',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'dove',
-		prefix: 'fa-',
+		prefix: 'fas fa-dove',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'dragon',
-		prefix: 'fa-',
+		prefix: 'fas fa-dragon',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'horse',
-		prefix: 'fa-',
+		prefix: 'fas fa-horse',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'hippo',
-		prefix: 'fa-',
+		prefix: 'fas fa-hippo',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'fish',
-		prefix: 'fa-',
+		prefix: 'fas fa-fish',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'carrot',
-		prefix: 'fa-',
+		prefix: 'fas fa-carrot',
 		type: 'vegetable',
 		family: 'fas',
 		color: 'green'
 	},
 	{
 		name: 'apple-alt',
-		prefix: 'fa-',
+		prefix: 'fas fa-apple-alt',
 		type: 'vegetable',
 		family: 'fas',
 		color: 'green'
 	},
 	{
 		name: 'lemon',
-		prefix: 'fa-',
+		prefix: 'fas fa-lemon',
 		type: 'vegetable',
 		family: 'fas',
 		color: 'green'
 	},
 	{
 		name: 'pepper-hot',
-		prefix: 'fa-',
+		prefix: 'fas fa-pepper-hot',
 		type: 'vegetable',
 		family: 'fas',
 		color: 'green'
 	},
 	{
 		name: 'user-astronaut',
-		prefix: 'fa-',
+		prefix: 'fas fa-user-astronaut',
 		type: 'user',
 		family: 'fas',
 		color: 'blue'
 	},
 	{
 		name: 'user-graduate',
-		prefix: 'fa-',
+		prefix: 'fas fa-user-graduate',
 		type: 'user',
 		family: 'fas',
 		color: 'blue'
 	},
 	{
 		name: 'user-ninja',
-		prefix: 'fa-',
+		prefix: 'fas fa-user-ninja',
 		type: 'user',
 		family: 'fas',
 		color: 'blue'
 	},
 	{
 		name: 'user-secret',
-		prefix: 'fa-',
+		prefix: 'fas fa-user-secret',
 		type: 'user',
 		family: 'fas',
 		color: 'blue'
@@ -138,11 +138,12 @@ function createCards(arrIcons) {
 	eleContainer.classList.add('main-container');
 	eleMainContainer.classList.add('icon-card');
 	
+	
 	eleMainContainer.innerHTML = `
-		<div class="content-card">
-			<i class = "${arrIcons.prefix}"></i>
-			<div class="main-text">${arrIcons.name}</div>
-		</div>
+	<div class="content-card">
+		<i class = "${arrIcons.prefix}"></i>
+		<div class="main-text">${arrIcons.name}</div>
+	</div>
 	`;
 
 	eleContainer.append(eleMainContainer);
