@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- link fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
@@ -14,10 +14,35 @@
 </head>
 <body>
     <div class="jumbo-container">
-        
+        <h1 class = "container-1200">FontIcons</h1>
+
+        <div class="container">
+
+            <!-- sezione header con le selezioni possibili -->
+            <header>
+                <label for="icons"><span class="head-text">Filtra per tipo</span></label>
+                <select name="icons" id="icons">
+                    <option value="0">All</option>
+                    <option value="1">animal</option>
+                    <option value="2">vegetable</option>
+                    <option value="3">user</option>
+                </select>
+            </header>
+
+            <!-- sezione main con le card delle varie icone -->
+            <main>
+                <div class="main-container">
+                    <div class="icon-card">
+                        <div class="content-card">
+                            <i class="fas fa-cat"></i>
+                            <div class="main-text">Cat</div>
+                        </div>
+                    </div>  
+                </div>
+            </main>
+        </div>
     </div>
     
-
     <!-- link js -->
     <script src="js/data.js"></script>
 </body>
