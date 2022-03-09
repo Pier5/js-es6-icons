@@ -1,6 +1,3 @@
-// Milestone 1
-// Partendo dalla struttura dati fornita, visualizzare in pagina un box per
-//  ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 // Milestone 2
 // Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per
 //  visualizzare le icone del colore corrispondente.
@@ -14,14 +11,14 @@
 const arrIcons = [
 	{
 		name: 'cat',
-		prefix: 'fa-',
+		prefix: 'fas fa-cat',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
 	},
 	{
 		name: 'crow',
-		prefix: 'fa-',
+		prefix: 'fas fa-crow',
 		type: 'animal',
 		family: 'fas',
 		color: 'orange'
@@ -125,3 +122,28 @@ const arrIcons = [
 		color: 'blue'
 	}
 ];
+
+// Milestone 1
+// Partendo dalla struttura dati fornita, visualizzare in pagina un box per
+//  ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
+
+const eleContainer = document.getElementById('main')
+
+for (let i = 0; i < arrIcons.length; i++) {
+    createCards(arrIcons[i]);
+}
+
+function createCards(arrIcons) {
+	const eleMainContainer = document.createElement('div');
+	eleContainer.classList.add('main-container');
+	eleMainContainer.classList.add('icon-card');
+	
+	eleMainContainer.innerHTML = `
+		<div class="content-card">
+			<i class = "${arrIcons.prefix}"></i>
+			<div class="main-text">${arrIcons.name}</div>
+		</div>
+	`;
+
+	eleContainer.append(eleMainContainer);
+}
