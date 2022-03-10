@@ -1,3 +1,10 @@
+// BONUS
+// 1- modificare la struttura dati fornita e valorizzare la proprietà "color"
+//  in modo dinamico: generare in modo casuale un codice colore, sapendo che 
+//  la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri 
+//  alfanumerici compresi tra 0 e 9 e A e F.
+// 2- popolare le options della select della milestone 3 dinamicamente.
+
 const arrIcons = [
 	{
 		name: 'cat',
@@ -122,25 +129,48 @@ const arrIcons = [
 
 const eleContainer = document.getElementById('main')
 
-arrIcons.forEach((iconsElement) => {
+function insertIcons(arrIcons, eleContainer) {
 
-	const eleMainContainer = document.createElement('div');
-	eleContainer.classList.add('main-container');
-	eleMainContainer.classList.add('icon-card');
-	
-	eleMainContainer.innerHTML = `
-	<div class="content-card">
-		<i class = "${iconsElement.family} ${iconsElement.prefix}${iconsElement.name}" style = "color:${iconsElement.color}"></i>
-		<div class="main-text">${iconsElement.name}</div>
-	</div>
-	`;
+	eleContainer.innerHTML = "";
 
-	eleContainer.append(eleMainContainer);
-});
+	arrIcons.forEach((arrIcons) => {
+		
+		const eleMainContainer = document.createElement('div');
+		eleContainer.classList.add('main-container');
+		eleMainContainer.classList.add('icon-card');
+		
+		eleMainContainer.innerHTML = `
+		<div class="content-card">
+			<i class = "${arrIcons.family} ${arrIcons.prefix}${arrIcons.name}" style = "color:${arrIcons.color}"></i>
+			<div class="main-text">${arrIcons.name}</div>
+		</div>
+		`;
 	
+		eleContainer.append(eleMainContainer);
+	});
+}
 
 // Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai 
 // vari tipi di icone (animal, vegetable, user). 
 // Quando l'utente seleziona un tipo dalla select, visualizzare solamente 
 // le icone corrispondenti.
+
+const iconsTypeSelector = document.getElementById("icons");
+insertIcons(arrIcons, eleContainer);
+
+iconsTypeSelector.addEventListener("change", function () {
+  const iconsTypeSelected = this.value;
+
+  if (iconsTypeSelected != "all") {
+    const filteredIcons = arrIcons.filter((iconType) => {
+      if (iconType.type == iconsTypeSelected) {
+        return true;
+      }
+    });
+
+    insertIcons(filteredIcons, eleContainer);
+  } else {
+    insertIcons(arrIcons, eleContainer);
+  }
+});
